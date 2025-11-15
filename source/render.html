@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<style>
+body {
+  margin: 0;
+  overflow: hidden;
+  background: transparent;
+}
+img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+</style>
+</head>
+<body>
+<img id="skin">
+<script>
+window.overlayAPI.onSkinLoad((imgPath) => {
+  if (!imgPath) return;
+  const url = `file://${imgPath.replace(/\\/g, '/')}`;
+  document.getElementById('skin').src = url;
+});
+</script>
+</body>
+</html>
