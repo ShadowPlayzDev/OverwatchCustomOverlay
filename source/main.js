@@ -72,7 +72,7 @@ function createWindow(cfg){
 
 function openDevWindow(cfg){
   if(!cfg.devMode) return;
-  const devWindow=new BrowserWindow({width:600,height:400,alwaysOnTop:true,webPreferences:{nodeIntegration:false,contextIsolation:false}});
+  const devWindow=new BrowserWindow({width:600,height:400,alwaysOnTop:true,webPreferences:{nodeIntegration:false,contextIsolation:true}});
   const html=`<h2>Overlay Dev Info</h2>
   <p><b>Config:</b> ${JSON.stringify(cfg)}</p>
   <p><b>Active Skin:</b> ${activeSkin?JSON.stringify(activeSkin):'none'}</p>
